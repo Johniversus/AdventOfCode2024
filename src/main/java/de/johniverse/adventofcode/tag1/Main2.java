@@ -1,4 +1,4 @@
-package de.johniverse.adventofcodetag1;
+package de.johniverse.adventofcode.tag1;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Main2 {
     public static void main(String[] args) {
-        String inputFileName = "adventofcodetag1/OrtListe.txt";
+        String inputFileName = "adventofcode/tag1/input.txt";
 
         try (InputStream inputStream = Main1.class.getClassLoader().getResourceAsStream(inputFileName)) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
