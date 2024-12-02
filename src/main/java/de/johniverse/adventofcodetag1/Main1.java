@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Main1 {
     public static void main(String[] args) {
-        String inputFileName = "tag1/OrtListe.txt";
+        String inputFileName = "adventofcodetag1/OrtListe.txt";
 
         try (InputStream inputStream = Main1.class.getClassLoader().getResourceAsStream(inputFileName)) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
