@@ -1,9 +1,7 @@
 package de.johniverse.adventofcode.tag2;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
+import de.johniverse.adventofcode.share.InputLoader;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,34 +11,17 @@ public class Main1 {
     final static int MAX_ABSTAND = 3;
 
     public static void main(String[] args) {
-        String inputFileName = "adventofcode/tag2/input.txt";
+        List<String> berichte = InputLoader.getInput("adventofcode/tag2/input.txt");
 
-        try (InputStream inputStream = de.johniverse.adventofcode.tag1.Main1.class.getClassLoader().getResourceAsStream(inputFileName)) {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        int sichereBerichteCount = 0;
 
-            if (inputStream == null) {
-                throw new IllegalArgumentException("Datei nicht gefunden: " + inputFileName);
-            }
-
-            List<String> berichte = new ArrayList<>();
-
-            String line;
-            while ((line = reader.readLine()) != null) {
-                berichte.add(line);
-            }
-
-            int sichereBerichteCount = 0;
-
-            for (String bericht : berichte) {
-                if (berichtValid(bericht))
-                    sichereBerichteCount++;
-            }
-
-            System.out.println("Sichere Berichte: " + sichereBerichteCount);
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        for (String bericht : berichte) {
+            if (berichtValid(bericht))
+                sichereBerichteCount++;
         }
+
+        System.out.println("Sichere Berichte: " + sichereBerichteCount);
+
     }
 
     private static boolean berichtValid(String bericht) {
