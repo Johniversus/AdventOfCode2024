@@ -47,6 +47,7 @@ public class Main2 {
                 }
             }
         }
+
         berechnungen.forEach(System.out::println);
 
         int ergebnis = 0;
